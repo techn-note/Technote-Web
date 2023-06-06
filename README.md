@@ -1,4 +1,4 @@
-# Technote - Desenvolvedores de Técnologia!
+# Technote - Desenvolvedores de Tecnologia!
 Bem-vindo ao repositório da equipe Technote! Somos um grupo de desenvolvedores apaixonados por tecnologia, comprometidos em criar soluções inovadoras para os desafios do mundo moderno. Nossa equipe é composta por profissionais talentosos e criativos, especializados em diversas áreas da tecnologia.
 
 # Quem somos
