@@ -84,7 +84,8 @@ body {
 
 nav {
   padding: 1rem;
-  position: absolute;
+  position: fixed;
+  border-radius: 0 0 10px 10px;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -93,6 +94,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 999;
+  background: #fafcff;
 }
 
 .logo {
@@ -351,8 +354,19 @@ header {
   padding: 0 0 0 15px;
 }
 
+.recente p {
+  text-align: justify;
+}
+
 #recente {
   gap: 0;
+}
+
+#reciclo {
+  display: none;
+  font-size: 25px;
+  align-items: center;
+
 }
 
 #recicle {
@@ -404,23 +418,14 @@ header {
   transform: scale(1.2, 1.2);
 }
 
-.projeto-futuro:hover img {
+.projeto-futuro:hover #reciclo {
   opacity: 1;
-  display: block;
+  display: flex;
 }
 
 .projeto-futuro h3 {
   color: #ffffff;
   text-transform: uppercase;
-}
-
-.projeto-futuro img {
-  position: relative;
-  margin-top: 10px;
-  width: 80%;
-  opacity: 0;
-  display: none;
-  transition: opacity 2s;
 }
 
 .projetosConteudo {
