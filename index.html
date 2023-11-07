@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -89,6 +90,19 @@
             <p class="equipeSubtitulo">Eliharison Gabriel</p>
           </div>
         </div>
+        <div class="equipeCard">
+          <img src="./css/img/Eliharison.png" alt="Equipe" />
+          <div class="equipeDetalhes">
+            <p class="equipeTitulo">UX/UI Design</p>
+            <p class="equipeSubtitulo">Eliharison Gabriel</p>
+          </div>
+        </div><div class="equipeCard">
+          <img src="./css/img/Eliharison.png" alt="Equipe" />
+          <div class="equipeDetalhes">
+            <p class="equipeTitulo">UX/UI Design</p>
+            <p class="equipeSubtitulo">Eliharison Gabriel</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -137,11 +151,18 @@
       <div class="container projetosContainer">
         <div class="projetosImagens">
           <div class="projeto">
-            <img src="./css/img/Projeto-futuro-1.png" alt="Projeto" />
-            <img src="./css/img/Projeto-futuro-2.png" alt="Projeto" />
+            <div id="projetos" class="projeto-futuro" onmouseover="showProject();">
+              <h3>Projetos Futuros</h3>
+              <img src="./css/img/Recyclo.png" alt="Recyclo" />
+            </div>
+            <div class="projeto-futuro pf2">
+              <h3>Projetos Futuros</h3>
+              <img src="./css/img/Recyclo.png" alt="Recyclo" />
+            </div>
           </div>
-          <div class="projeto recente">
-            <img src="./css/img/Recyclo.png" alt="Recyclo" />
+          <div id="recente" class="projeto recente">
+            <h3 id="recicle">RE<span class="material-symbols-outlined c1">replay</span>Y<span class="material-symbols-outlined c2">replay</span>LO</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod odio eveniet velit. Nostrum iure nisi itaque quisquam expedita porro est modi, minus tempore inventore repellat necessitatibus eius obcaecati recusandae architecto.</p>
           </div>
         </div>
         <div class="projetosConteudo">
@@ -168,12 +189,22 @@
         </div>
 
         <div class="servicosImagens">
-          <div class="sectionImagens">
-            <img src="./css/img/Servico-1.png" alt="serviços" />
+          <div class="sectionImagens sectionUx">
+            <div class="ux-text">
+              <span>UI/UX DESING</span>
+            </div>
+            <div class="ux">
+              <img src="./css/img/ux.ui.webp" alt="serviços" />
+            </div>
           </div>
-          <div class="sectionImagens">
-            <img src="./css/img/Servico-2.png" alt="serviços" />
-            <img src="./css/img/Servico-3.png" alt="serviços" />
+          <div class="sectionImagens sectionUx">
+            <div class="ux-text">
+              <span>UI/UX DESING</span>
+            </div>
+            <div class="ux">
+              <img src="./css/img/Servico-2.png" alt="serviços" />
+              <img src="./css/img/Servico-3.png" alt="serviços" />
+            </div>
           </div>
         </div>
       </div>
@@ -207,4 +238,5 @@
       </div>
     </footer>
   </body>
+  <script src="js/script.js"></script>
 </html>

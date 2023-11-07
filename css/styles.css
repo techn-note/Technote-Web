@@ -7,7 +7,7 @@
   --secondary-color: #fafcff;
   --text-dark: #0d213f;
   --text-light: #767268;
-  --extra-light: #ffffff;
+  --extra-light: #fafcff;
   --max-width: 1200px;
   --Fonte: "Poppins", sans-serif;
   --FonteLogo: "Expletus Sans", sans-serif
@@ -160,7 +160,9 @@ header {
 }
 
 .ImagemHeader img:nth-child(2) {
-  max-width: 250px;
+  background: #fafcff;
+  padding: 1px;
+  max-width: 260px;
   transform: translate(0%, -25%);
 }
 
@@ -239,8 +241,8 @@ header {
 
 .equipeGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
 }
 
 .equipeCard {
@@ -339,12 +341,41 @@ header {
 .projeto {
   display: grid;
   place-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .recente {
   width: 350px;
   height: 450px;
+  display: none;
+  padding: 0 0 0 15px;
+}
+
+#recente {
+  gap: 0;
+}
+
+#recicle {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.c1 {
+  transform: rotate(140deg);
+  background: linear-gradient(to bottom, #0000FF, #00FF00);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+  font-size: 30px;
+}
+.c2 {
+  transform: scaleX(-1);
+  background: linear-gradient(to bottom, #00FF00, #0000FF);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+  font-size: 30px;
 }
 
 .projeto img {
@@ -352,12 +383,51 @@ header {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
 
+.projeto-futuro {
+  background: #0467e9;
+  width: 210px;
+  height: 170px;
+  border-radius: 11%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center center;
+}
+
+.pf2 {
+  background: #49b2f5;
+}
+
+.projeto-futuro:hover {
+  transform: scale(1.2, 1.2);
+}
+
+.projeto-futuro:hover img {
+  opacity: 1;
+  display: block;
+}
+
+.projeto-futuro h3 {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.projeto-futuro img {
+  position: relative;
+  margin-top: 10px;
+  width: 80%;
+  opacity: 0;
+  display: none;
+  transition: opacity 2s;
+}
+
 .projetosConteudo {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  align-items: end;
 }
 
 .projetosConteudo > div {
@@ -394,6 +464,37 @@ header {
   display: grid;
   place-content: center;
   gap: 1rem;
+}
+
+.sectionUx {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ux-text {
+  position: absolute;
+  z-index: 1;
+  display: none;
+  font-weight: bolder;
+  font-size: 35px;
+  color: #0465e4;
+  text-shadow: 2px 2px 0px rgb(12 31 59);
+}
+
+.sectionUx {
+  filter: blur(0.5rem);
+  transition: filter 0.5s;
+}
+
+.sectionUx:hover {
+  filter: blur(0);
+}
+
+.sectionUx:hover .ux-text {
+  display: block;
 }
 
 .footer {
