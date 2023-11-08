@@ -23,6 +23,45 @@ html {
   scroll-behavior: smooth;
 }
 
+.navbar-links li.navbar-dropdown {
+  position: relative;
+}
+
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+}
+.navbar-links li a {
+  display: block;
+  text-decoration: none;
+  color: #444;
+  padding: 20px 20px;
+  font-weight: 700;
+  transition: 0.4s all;
+}
+
+.navbar-links li.navbar-dropdown .dropdown {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  padding: 20px 0;
+  top: 100%;
+  transform: translateY(50px);
+  left: 0;
+  width: 250px;
+  background-color: #fff;
+  box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  z-index: 111;
+  transition: 0.4s all;
+}
+
+.navbar-links li.navbar-dropdown:hover .dropdown {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0px);
+}
 
 .container {
   max-width: var(--max-width);
@@ -98,7 +137,11 @@ nav {
   background: #fafcff;
 }
 
-.logo {
+.logoResponsive {
+  display: none;
+}
+
+.logo, .logoResponsive {
   font-family: var(--FonteLogo);
   font-size: 1.2rem;
   font-weight: 600;
@@ -106,7 +149,7 @@ nav {
   cursor: pointer;
 }
 
-.logo span {
+.logo span, .logoResponsive span {
   color: var(--primary-color);
 }
 
@@ -214,9 +257,26 @@ header {
 
 .videoPitch img {
   width: 60px;
-  height: 60px;
   border-radius: 100%;
   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+.videoPitch img:hover {
+  animation: aquaRotate 2s;
+}
+
+@keyframes aquaRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.vPitch {
+  color: #000000;
+  font-weight: bolder;
 }
 
 .videoPitch span {
@@ -263,7 +323,7 @@ header {
   position: absolute;
   width: calc(100% - 2rem);
   padding: 1rem;
-  bottom: -6rem;
+  bottom: -7rem;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -344,17 +404,28 @@ header {
 .projeto {
   display: grid;
   place-content: center;
-  gap: 1.5rem;
+  gap: 0.5rem;
 }
 
 .recente {
   width: 350px;
   height: 450px;
   display: none;
-  padding: 0 0 0 15px;
+  padding: 0 0 0 1.375rem;
 }
 
-.recente p {
+.atual {
+  width: 350px;
+  height: 450px;
+  display: grid;
+  padding: 0 0 0 1.375rem;
+}
+
+.logo-aqua {
+  width: 320px;
+}
+
+.recente p, .atual p {
   text-align: justify;
 }
 
@@ -390,11 +461,6 @@ header {
   color: transparent;
   background-clip: text;
   font-size: 30px;
-}
-
-.projeto img {
-  border-radius: 1rem;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
 
 .projeto-futuro {
@@ -477,6 +543,7 @@ header {
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .ux-text {
@@ -487,19 +554,20 @@ header {
   font-size: 35px;
   color: #0465e4;
   text-shadow: 2px 2px 0px rgb(12 31 59);
-}
-
-.sectionUx {
-  filter: blur(0.5rem);
+  display: none;
   transition: filter 0.5s;
+  filter: blur(0);
+  text-align: center;
 }
 
-.sectionUx:hover {
-  filter: blur(0);
+.sectionUx:hover .ux {
+  transition: filter 0.5s;
+  filter: blur(10px);
 }
 
 .sectionUx:hover .ux-text {
   display: block;
+  filter: blur(0);
 }
 
 .footer {
@@ -566,6 +634,15 @@ header {
 }
 
 @media (width < 800px) {
+
+  .logoResponsive {
+    display: block;
+  }
+
+  .logo {
+    display: none;
+  }
+  
   .navBar {
     display: none;
   }
@@ -586,6 +663,7 @@ header {
   }
 
   .projetosContainer {
+    grid-template-columns: repeat(1, 1fr);
     gap: 3rem;
   }
 
@@ -593,14 +671,33 @@ header {
     grid-template-columns: 35% 65%;
   }
 
+  .atual {
+    width: 350px;
+    height: 235px;
+    display: grid;
+    padding: 0 0 0 1.375rem;
+  }
+
+  .ux-text {
+    font-size: 20px;
+  }
+
   .recente {
-    width: 100%;
+    width: 80%;
     height: auto;
   }
 
 }
 
 @media (width < 426px) {
+
+  .logoResponsive {
+    display: block;
+  }
+
+  .logo {
+    display: none;
+  }
 
   .equipeGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -620,12 +717,24 @@ header {
   }
 
   .projetosImagens {
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 100%;
+  }
+
+  .atual {
+    width: 350px;
+    height: 235px;
+    display: grid;
+    padding: 0 0 0 1.375rem;
+  }
+
+  .ux-text {
+    font-size: 20px;
   }
 
   .recente {
     width: 100%;
     height: auto;
+    padding: 0 0 0 1.75rem;
   }
 
   .servicosContainer {

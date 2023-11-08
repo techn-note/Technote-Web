@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -20,6 +24,17 @@
   <body>
     <nav>
       <div class="logo">Tech<span>note</span></div>
+      <ul class="navbar-links">
+        <li class="navbar-dropdown">
+          <a><div class="logoResponsive">Tech<span>note</span></div></a>
+          <div class="dropdown">
+            <a href="#QS">Quem somos</a>
+            <a href="#P">Projetos</a>
+            <a href="#NT">Nosso Time</a>
+            <a href="#S">Serviços</a>
+          </div>
+        </li>
+      </ul>
       <ul class="navBar">
         <li class="link"><a href="#QS">Quem somos</a></li>
         <li class="link"><a href="#P">Projetos</a></li>
@@ -49,11 +64,11 @@
               <div class="pitch">
                 <div class="videoPitch">
                   <a href="https://youtu.be/E8wV61-50E4">
-                    <img src="./css/img/Story-Recyclo.png" alt="pitch" />
+                    <img src="./css/img/aquaSenseLogo.webp" alt="pitch" />
                     <span><i class="ri-play-fill"></i></span
                   ></a>
                 </div>
-                <span>Veja nosso projeto</span>
+                <a class="vPitch" href="https://youtu.be/E8wV61-50E4"><span>Veja nosso projeto</span></a>
               </div>
             </div>
           </div>
@@ -155,9 +170,10 @@
               <h3>Projetos Futuros</h3>
               <h3 id="reciclo">RE<span class="material-symbols-outlined c1">replay</span>Y<span class="material-symbols-outlined c2">replay</span>LO</h3>
             </div>
-            <div class="projeto-futuro pf2">
-              <h3>Projetos Futuros</h3>
-            </div>
+          </div>
+          <div id="atual" class="projeto atual">
+            <img class="logo-aqua" src="css/img/logoAqua.webp" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod odio eveniet velit. Nostrum iure nisi itaque quisquam expedita porro est modi, minus tempore inventore repellat necessitatibus eius obcaecati recusandae architecto.</p>
           </div>
           <div id="recente" class="projeto recente">
             <h3 id="recicle">RE<span class="material-symbols-outlined c1">replay</span>Y<span class="material-symbols-outlined c2">replay</span>LO</h3>
@@ -198,15 +214,29 @@
           </div>
           <div class="sectionImagens sectionUx">
             <div class="ux-text">
-              <span>UI/UX DESING</span>
+              <span>APLICAÇÕES EM JAVA</span>
             </div>
             <div class="ux">
-              <img src="./css/img/Servico-2.png" alt="serviços" />
-              <img src="./css/img/Servico-3.png" alt="serviços" />
+              <img src="./css/img/java.webp" alt="serviços" />
+            </div>
+          </div>
+          <div class="sectionImagens sectionUx">
+            <div class="ux-text">
+              <span>DESENVOLVIMENTO WEB</span>
+            </div>
+            <div class="ux">
+              <img src="./css/img/web.webp" alt="serviços" />
+            </div>
+          </div>
+          <div class="sectionImagens sectionUx">
+            <div class="ux-text">
+              <span>DESENVOLVIMENTO MOBILE</span>
+            </div>
+            <div class="ux">
+              <img src="./css/img/mobile.webp" alt="serviços" />
             </div>
           </div>
         </div>
-      </div>
     </section>
 
     <footer id="C" class="footer">
