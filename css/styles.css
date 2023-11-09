@@ -262,7 +262,7 @@ header {
 }
 
 .videoPitch img:hover {
-  animation: aquaRotate 2s;
+  animation: aquaRotate 4s;
 }
 
 @keyframes aquaRotate {
@@ -408,25 +408,56 @@ header {
 }
 
 .recente {
-  width: 350px;
-  height: 450px;
-  display: none;
-  padding: 0 0 0 1.375rem;
+  position: relative;
+  border: 0.5rem solid var(--extra-light);
+  border-radius: 2rem;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  width: 370px;
+  height: 370px;
+  display: grid;
+  justify-items: center;
+  padding: 0 1.375rem 0 1.375rem;
+  right: 22%;
+  top: 18%;
+  z-index: 33;
+  background: #fdfdfd8a;
+  font-weight: bolder;
 }
 
 .atual {
-  width: 350px;
-  height: 450px;
+  position: relative;
+  border: 0.5rem solid var(--extra-light);
+  border-radius: 2rem;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  width: 370px;
+  height: 370px;
   display: grid;
-  padding: 0 0 0 1.375rem;
+  justify-items: center;
+  padding: 0 1.375rem 0 1.375rem;
+  right: 22%;
+  top: 18%;
+  z-index: 33;
+  background: #fdfdfd8a;
+  font-weight: bolder;
 }
 
 .logo-aqua {
-  width: 320px;
+  width: 365px;
+  z-index: 34;
 }
 
 .recente p, .atual p {
+  position: relative;
   text-align: justify;
+  z-index: 35;
+}
+
+.recente p {
+  width: 93%;
+}
+
+.atual p {
+  width: 80%;
 }
 
 #recente {
@@ -434,7 +465,7 @@ header {
 }
 
 #reciclo {
-  display: none;
+  display: flex;
   font-size: 25px;
   align-items: center;
 
@@ -464,34 +495,50 @@ header {
 }
 
 .projeto-futuro {
-  background: #0467e9;
-  width: 210px;
-  height: 170px;
-  border-radius: 11%;
+  width: 350px;
+  height: 505px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: transform 0.3s ease-in-out;
   transform-origin: center center;
+  position: relative;
+  left: 6%;
+  border: 0.5rem solid var(--extra-light);
+  border-radius: 2rem;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
 }
 
-.pf2 {
-  background: #49b2f5;
+.projeto-futuro img {
+  position: absolute;
 }
 
 .projeto-futuro:hover {
   transform: scale(1.2, 1.2);
 }
 
-.projeto-futuro:hover #reciclo {
-  opacity: 1;
-  display: flex;
+.projeto-futuro:hover > .logo-gear {
+  animation: GearRotate 15s;
 }
 
-.projeto-futuro h3 {
-  color: #ffffff;
-  text-transform: uppercase;
+@keyframes GearRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.logo-gear {
+  z-index: 31;
+}
+.logo-faixa-frente {
+  z-index: 32;
+}
+.logo-faixa-back {
+  z-index: 30;
 }
 
 .projetosConteudo {
