@@ -171,7 +171,7 @@ nav {
 }
 
 header {
-  background-image: url(img/Hero-Landing-Page.png);
+  background-image: url(img/Hero-Landing-Page.webp);
   background-attachment: fixed;
   background-size: cover;
   -moz-background-size: cover;
@@ -351,7 +351,7 @@ header {
 
 .valores {
   background-color: var(--secondary-color);
-  background-image: url(img/Quem-Somos.png);
+  background-image: url(img/Quem-Somos.webp);
   background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover;
@@ -469,12 +469,6 @@ header {
   font-size: 25px;
   align-items: center;
 
-}
-
-#recicle {
-  font-size: 30px;
-  display: flex;
-  align-items: center;
 }
 
 .c1 {
