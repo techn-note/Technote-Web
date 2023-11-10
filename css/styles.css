@@ -424,6 +424,12 @@ header {
   font-weight: bolder;
 }
 
+#recicle {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+
 .atual {
   position: relative;
   border: 0.5rem solid var(--extra-light);
