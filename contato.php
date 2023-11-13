@@ -21,18 +21,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
     try {
         //Server settings
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+        $mail->SMTPDebug    = SMTP::DEBUG_OFF;                       //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'detesteemail704@gmail.com
+        $mail->Host         = 'smtp.gmail.com';                     //Set the SMTP server to send through
+        $mail->SMTPAuth     = true;                                   //Enable SMTP authentication
+        $mail->Username     = 'detesteemail704@gmail.com
         ';                     //SMTP username
-        $mail->Password   = 'lqmv abdo mkpi bzhc';                               //SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->Password     = 'lqmv abdo mkpi bzhc';                               //SMTP password
+        $mail->SMTPSecure   = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+        $mail->Port         = 465; //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
-        $mail->setFrom('detesteemail704@gmail.com', 'Technote');
+        $mail->setFrom('detesteemail704@gmail.com', "Technote");
         $mail->addAddress($email);     //Add a recipient
         //$mail->addAddress('ellen@example.com');               //Name is optional
         //$mail->addReplyTo('info@example.com', 'Information');
