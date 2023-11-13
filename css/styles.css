@@ -91,7 +91,7 @@ html {
   max-width: calc(var(--max-width) / 1.5);
 }
 
-.btn {
+.btn, #btnSend {
   padding: 0.75rem 2rem;
   outline: none;
   border: none;
@@ -103,7 +103,7 @@ html {
   transition: 0.3s;
 }
 
-.btn:hover {
+.btn:hover, #btnSend:hover {
   background-color: var(--primary-color-dark);
 }
 
@@ -414,7 +414,7 @@ header {
   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
   width: 370px;
   height: 370px;
-  display: grid;
+  display: none;
   justify-items: center;
   padding: 0 1.375rem 0 1.375rem;
   right: 22%;
@@ -670,6 +670,87 @@ header {
   border-top: 1px solid var(--text-light);
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal form {
+  width: 100%;
+  height: 90%;
+  font-weight: bold;
+}
+
+.modal-content {
+  background-color: var(--secondary-color);
+  margin: auto;
+  padding: 40px 20px 20px 20px;
+  border: 1px solid #888;
+  width: 40%;
+  height: 70%;
+  border-radius: 2rem;
+}
+
+.rowModal {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.colModal {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.colModal-Single {
+  width: 100%;
+}
+
+.colDireita input, .colDireita label {
+  margin-left: 1rem;
+}
+
+.colModal input {
+  width: 95%;
+  height: 2.35rem;
+  padding-left: 0.3rem;
+}
+
+.colModal-Single input {
+  width: 100%;
+}
+
+.colModal-Single textarea {
+  padding: 0.3rem 0 0.3rem 0.3rem;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 @media (width < 1025px) {
   .ImagemHeader img:nth-child(1) {
     max-width: 50%;
@@ -677,6 +758,16 @@ header {
 
   .ImagemHeader img:nth-child(2) {
     max-width: 50%;
+  }
+
+  .modal-content {
+    width: 60%;
+    height: 80%;
+  }
+
+  .modal form {
+    width: 100%;
+    height: 85%;
   }
 }
 
@@ -734,6 +825,16 @@ header {
     height: auto;
   }
 
+  .modal-content {
+    width: 80%;
+    height: 80%;
+  }
+
+  .modal form {
+    width: 100%;
+    height: 80%;
+  }
+
 }
 
 @media (width < 426px) {
@@ -764,14 +865,16 @@ header {
   }
 
   .projetosImagens {
-    grid-template-columns: 100%;
+    grid-template-columns: 95%;
   }
 
   .atual {
-    width: 350px;
-    height: 235px;
+    width: 375px;
+    height: 330px;
     display: grid;
     padding: 0 0 0 1.375rem;
+    left: 5%;
+    top: 10%;
   }
 
   .ux-text {
@@ -782,6 +885,7 @@ header {
     width: 100%;
     height: auto;
     padding: 0 0 0 1.75rem;
+    left: 5%;
   }
 
   .servicosContainer {
@@ -790,5 +894,15 @@ header {
 
   .footerContainer {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .modal-content {
+    width: 95%;
+    height: 85%;
+  }
+
+  .modal form {
+    width: 100%;
+    height: 80%;
   }
 }
