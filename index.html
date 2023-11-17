@@ -48,8 +48,14 @@
             <header>
                 <div class="container containerHeader">
                     <div class="ImagemHeader">
-                        <img src="./css/img/Logo.webp" alt="Logo"/>
-                        <img src="./css/img/Logotipo.webp" alt="Logotipo"/>
+                        <div id="projetos" class="projeto-futuro" onmouseover="showProject();">
+                            <img class="logo faixa-back" src="css/img/Logo-Faixa-Back.webp" alt="Logo Animado-Faixas-Traseiras">
+                            <img class="logo gear" src="css/img/Logo-Gear.webp" alt="Logo Animado-Engrenagem">
+                            <img class="logo sigla" src="css/img/Logo-Nome.webp" alt="Logo Animado-Sigla">
+                            <img class="logo faixa-frente" src="css/img/Logo-Faixa-Frente.webp" alt="Logo Animado-Faixas-Frontais">
+                            
+                        </div>
+                        <img id="logotipo" src="./css/img/Logotipo.webp" alt="Logotipo"/>
                     </div>
                     <div class="conteudoHeader">
                         <div>
@@ -91,7 +97,7 @@
                         </div>
                     </div>
                     <div class="equipeCard">
-                        <img src="./css/img/João.webp" alt="Equipe-João"/>
+                        <img src="./css/img/joao.png" alt="Equipe-João"/>
                         <div class="equipeDetalhes">
                             <p class="equipeTitulo">Desenvolvedor</p>
                             <p class="equipeSubtitulo">João Pedro Sabijon</p>
@@ -151,22 +157,15 @@
             <section id="P" class="projetos">
                 <div class="container projetosContainer">
                     <div class="projetosImagens">
-                        <div class="projeto">
-                            <div id="projetos" class="projeto-futuro" onmouseover="showProject();">
-                                <img class="logo-gear" src="css/img/Logo-Gear.webp" alt="Logo Animado-Engrenagem">
-                                <img src="css/img/Logo-Nome.webp" alt="Logo Animado-Sigla">
-                                <img class="logo-faixa-frente" src="css/img/Logo-Faixa-Frente.webp" alt="Logo Animado-Faixas-Frontais">
-                                <img class="logo-faixa-back" src="css/img/Logo-Faixa-Back.webp" alt="Logo Animado-Faixas-Traseiras">
-                            </div>
+                        <div class="projeto atual">
+                            <img src="css/img/Recyclo.webp" alt="Recyclo">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod odio eveniet velit. Nostrum iure nisi itaque quisquam expedita porro est modi, minus tempore inventore repellat necessitatibus eius obcaecati recusandae architecto.</p>
                         </div>
-                        <div id="atual" class="projeto atual">
+                        <div class="projeto atual">
                             <img class="logo-aqua" src="css/img/logoAqua.webp" alt="Logo-AquaSense">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod odio eveniet velit. Nostrum iure nisi itaque quisquam expedita porro est modi, minus tempore inventore repellat necessitatibus eius obcaecati recusandae architecto.</p>
                         </div>
-                        <div id="recente" class="projeto recente">
-                            <h3 id="recicle">RE<span class="material-symbols-outlined c1">replay</span>Y<span class="material-symbols-outlined c2">replay</span>LO</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod odio eveniet velit. Nostrum iure nisi itaque quisquam expedita porro est modi, minus tempore inventore repellat necessitatibus eius obcaecati recusandae architecto.</p>
-                        </div>
+                        
                     </div>
                     <div class="projetosConteudo">
                         <div>
@@ -186,7 +185,7 @@
                     <div class="servicosImagens">
                         <div class="sectionImagens sectionUx">
                             <div class="ux-text">
-                                <span>UI/UX DESING</span>
+                                <span>UI/UX Design</span>
                             </div>
                             <div class="ux">
                                 <img src="./css/img/ux.ui.webp" alt="Serviços-UI/UX"/>
@@ -194,7 +193,7 @@
                         </div>
                         <div class="sectionImagens sectionUx">
                             <div class="ux-text">
-                                <span>APLICAÇÕES EM JAVA</span>
+                                <span>Aplicações em Java</span>
                             </div>
                             <div class="ux">
                                 <img src="./css/img/java.webp" alt="Serviços-DevJava"/>
@@ -202,7 +201,7 @@
                         </div>
                         <div class="sectionImagens sectionUx">
                             <div class="ux-text">
-                                <span>DESENVOLVIMENTO WEB</span>
+                                <span>Desenvolvimento Web</span>
                             </div>
                             <div class="ux">
                                 <img src="./css/img/webDev.webp" alt="Serviços-DevWeb"/>
@@ -210,7 +209,7 @@
                         </div>
                         <div class="sectionImagens sectionUx">
                             <div class="ux-text">
-                                <span>DESENVOLVIMENTO MOBILE</span>
+                                <span>Desenvolvimento Mobile</span>
                             </div>
                             <div class="ux">
                                 <img src="./css/img/mobile-dev.webp" alt="Serviços-DevMobile"/>

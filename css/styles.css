@@ -189,28 +189,31 @@ header {
 
 .ImagemHeader {
   position: relative;
+  padding: 5rem 0;
 }
 
-.ImagemHeader img {
+.ImagemHeader #logotipo {
   position: absolute;
   top: 50%;
   left: 50%;
   border: 0.5rem solid var(--extra-light);
   border-radius: 2rem;
   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
-}
-
-.ImagemHeader img:nth-child(1) {
-  max-width: 350px;
-  transform: translate(-75%, -50%);
-}
-
-.ImagemHeader img:nth-child(2) {
+  transform: translate(10%, -25%);
   background: #fafcff;
   padding: 1px;
   max-width: 260px;
-  transform: translate(0%, -25%);
 }
+/*
+.ImagemHeader img:nth-child(1) {
+  max-width: 350px;
+}
+
+.ImagemHeader img:nth-child(2) {
+  
+  
+}
+*/
 
 .conteudoHeader {
   display: flex;
@@ -317,6 +320,8 @@ header {
 
 .equipeCard img {
   border-radius: 1rem;
+  height: 20rem;
+  width: 100%;
 }
 
 .equipeDetalhes {
@@ -398,7 +403,7 @@ header {
 .projetosImagens {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 10rem;
 }
 
 .projeto {
@@ -518,7 +523,7 @@ header {
   transform: scale(1.2, 1.2);
 }
 
-.projeto-futuro:hover > .logo-gear {
+.projeto-futuro:hover > .gear {
   animation: GearRotate 15s;
 }
 
@@ -529,16 +534,6 @@ header {
   100% {
     transform: rotate(360deg);
   }
-}
-
-.logo-gear {
-  z-index: 31;
-}
-.logo-faixa-frente {
-  z-index: 32;
-}
-.logo-faixa-back {
-  z-index: 30;
 }
 
 .projetosConteudo {
@@ -600,7 +595,6 @@ header {
   font-weight: bolder;
   font-size: 35px;
   color: #0465e4;
-  text-shadow: 2px 2px 0px rgb(12 31 59);
   display: none;
   transition: filter 0.5s;
   filter: blur(0);
