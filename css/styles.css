@@ -8,7 +8,7 @@
   --text-dark: #0d213f;
   --text-light: #767268;
   --extra-light: #fafcff;
-  --max-width: 1200px;
+  --max-width: 1350px;
   --Fonte: "Poppins", sans-serif;
   --FonteLogo: "Expletus Sans", sans-serif
 }
@@ -192,6 +192,64 @@ header {
   padding: 5rem 0;
 }
 
+.ImagemHeader .logoTechnote {
+  position: absolute;
+  top: 10%;
+  left: 25%;
+  border: 0.5rem solid var(--extra-light);
+  border-radius: 2rem;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  background: #fafcff;
+  padding: 1px;
+  max-width: 260px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  width: 20vw;
+  height: 45vh;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center center;
+}
+
+.logoTechnote img {
+  position: absolute;
+}
+
+.aqua {
+  width: 100%;
+  z-index: 34;
+}
+.gear {
+  width: 100%;
+  z-index: 31;
+}
+.faixa-frente {
+  width: 100%;
+  z-index: 32;
+}
+.faixa-back {
+  width: 100%;
+  z-index: 30;
+}
+
+.logoTechnote:hover {
+  transform: scale(1.2, 1.2);
+}
+
+.logoTechnote:hover > .gear {
+  animation: GearRotate 15s;
+}
+
+@keyframes GearRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
 .ImagemHeader #logotipo {
   position: absolute;
   top: 50%;
@@ -202,18 +260,9 @@ header {
   transform: translate(10%, -25%);
   background: #fafcff;
   padding: 1px;
-  max-width: 260px;
+  max-width: 15vw;
+  z-index: 34;
 }
-/*
-.ImagemHeader img:nth-child(1) {
-  max-width: 350px;
-}
-
-.ImagemHeader img:nth-child(2) {
-  
-  
-}
-*/
 
 .conteudoHeader {
   display: flex;
@@ -397,13 +446,15 @@ header {
 .projetosContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 5rem;
 }
 
 .projetosImagens {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10rem;
+  gap: 3.75rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .projeto {
@@ -412,74 +463,9 @@ header {
   gap: 0.5rem;
 }
 
-.recente {
-  position: relative;
-  border: 0.5rem solid var(--extra-light);
-  border-radius: 2rem;
-  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
-  width: 370px;
-  height: 370px;
-  display: none;
-  justify-items: center;
-  padding: 0 1.375rem 0 1.375rem;
-  right: 22%;
-  top: 18%;
-  z-index: 33;
-  background: #fdfdfd8a;
-  font-weight: bolder;
-}
-
-#recicle {
-  font-size: 30px;
-  display: flex;
-  align-items: center;
-}
-
-.atual {
-  position: relative;
-  border: 0.5rem solid var(--extra-light);
-  border-radius: 2rem;
-  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
-  width: 370px;
-  height: 370px;
-  display: grid;
-  justify-items: center;
-  padding: 0 1.375rem 0 1.375rem;
-  right: 22%;
-  top: 18%;
-  z-index: 33;
-  background: #fdfdfd8a;
-  font-weight: bolder;
-}
-
 .logo-aqua {
   width: 365px;
   z-index: 34;
-}
-
-.recente p, .atual p {
-  position: relative;
-  text-align: justify;
-  z-index: 35;
-}
-
-.recente p {
-  width: 93%;
-}
-
-.atual p {
-  width: 80%;
-}
-
-#recente {
-  gap: 0;
-}
-
-#reciclo {
-  display: flex;
-  font-size: 25px;
-  align-items: center;
-
 }
 
 .c1 {
@@ -499,24 +485,61 @@ header {
   font-size: 30px;
 }
 
-.projeto-futuro {
-  width: 350px;
-  height: 505px;
-  display: flex;
-  flex-direction: column;
+
+.projetosFuturos {
+  display: grid;
   justify-content: center;
+  align-items: center;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.projeto-futuro {
+  position: relative;
+  display: grid;
+  justify-items: center;
   align-items: center;
   transition: transform 0.3s ease-in-out;
   transform-origin: center center;
+  border: 0.5rem solid var(--extra-light);
+  border-radius: 2rem;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+.projeto-principal {
   position: relative;
-  left: 6%;
+  display: grid;
+  padding: 1.75rem 2rem ;
+  justify-items: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center center;
   border: 0.5rem solid var(--extra-light);
   border-radius: 2rem;
   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
 }
 
 .projeto-futuro img {
-  position: absolute;
+  display: absolute;
+}
+
+#Projeto-futuro-2 {
+  background-color: #49b2f5;
+  border: 0.5rem solid #49b2f5 ;
+  width: 15rem;
+  height: 15rem;
+  cursor: pointer;
+}
+
+#Recyclo {
+  width: 15rem;
+  height: 8rem;
+  cursor: pointer;
+}
+
+.projeto-futuro p {
+  width: 100%;
+  height: 100%;
 }
 
 .projeto-futuro:hover {
@@ -738,8 +761,7 @@ header {
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -763,6 +785,8 @@ header {
     width: 100%;
     height: 85%;
   }
+
+
 }
 
 @media (width < 800px) {
@@ -801,13 +825,6 @@ header {
 
   .projetosImagens {
     grid-template-columns: 35% 65%;
-  }
-
-  .atual {
-    width: 350px;
-    height: 235px;
-    display: grid;
-    padding: 0 0 0 1.375rem;
   }
 
   .ux-text {

@@ -1,4 +1,4 @@
-  
+
 document.addEventListener("DOMContentLoaded", function() {
     const origin = document.getElementById("projetos");
     const element = document.getElementById("recente");
