@@ -8,7 +8,7 @@
   --text-dark: #0d213f;
   --text-light: #767268;
   --extra-light: #fafcff;
-  --max-width: 1350px;
+  --max-width: 1200px;
   --Fonte: "Poppins", sans-serif;
   --FonteLogo: "Expletus Sans", sans-serif
 }
@@ -209,6 +209,21 @@ header {
   height: 45vh;
   transition: transform 0.3s ease-in-out;
   transform-origin: center center;
+  &:hover {
+    transform: scale(1.2, 1.2);
+  }
+  &:hover > .gear {
+    animation: GearRotate 15s;
+  }
+}
+
+@keyframes GearRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .logoTechnote img {
@@ -232,22 +247,7 @@ header {
   z-index: 30;
 }
 
-.logoTechnote:hover {
-  transform: scale(1.2, 1.2);
-}
 
-.logoTechnote:hover > .gear {
-  animation: GearRotate 15s;
-}
-
-@keyframes GearRotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 
 .ImagemHeader #logotipo {
@@ -430,6 +430,10 @@ header {
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  &:hover {
+    transform: scale(1.25rem);
+  }
 }
 
 .valoresDetalhes {
@@ -464,7 +468,7 @@ header {
 }
 
 .logo-aqua {
-  width: 365px;
+  width: 15rem;
   z-index: 34;
 }
 
@@ -494,6 +498,23 @@ header {
   gap: 1.75rem;
 }
 
+.imgReciclo {
+  width: 12rem;
+  height: 12rem;
+  transition: transform 0.3s ease-in-out 0s;
+  transform-origin: center center;
+  box-shadow: rgba(0, 0, 0, 0.1) 5px 5px 30px;
+  border: 0.5rem solid var(--extra-light);
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+}
+
 .projeto-futuro {
   position: relative;
   display: grid;
@@ -517,6 +538,7 @@ header {
   border: 0.5rem solid var(--extra-light);
   border-radius: 2rem;
   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  gap: 1rem;
 }
 
 .projeto-futuro img {
@@ -526,37 +548,17 @@ header {
 #Projeto-futuro-2 {
   background-color: #49b2f5;
   border: 0.5rem solid #49b2f5 ;
-  width: 15rem;
-  height: 15rem;
-  cursor: pointer;
-}
-
-#Recyclo {
-  width: 15rem;
-  height: 8rem;
-  cursor: pointer;
+  width: 12rem;
+  height: 12rem;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
 }
 
 .projeto-futuro p {
   width: 100%;
   height: 100%;
-}
-
-.projeto-futuro:hover {
-  transform: scale(1.2, 1.2);
-}
-
-.projeto-futuro:hover > .gear {
-  animation: GearRotate 15s;
-}
-
-@keyframes GearRotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 .projetosConteudo {
@@ -712,14 +714,14 @@ header {
   margin: auto;
   padding: 40px 20px 20px 20px;
   border: 1px solid #888;
-  width: 40%;
-  height: 70%;
+  width: 50vw;
+  height: 75vh;
   border-radius: 2rem;
 }
 
 .rowModal {
   width: 100%;
-  height: 20%;
+  height: 6.5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -732,7 +734,7 @@ header {
   flex-direction: column;
 }
 
-.colModal-Single {
+.colModal-Single { 
   width: 100%;
 }
 
@@ -754,6 +756,19 @@ header {
   padding: 0.3rem 0 0.3rem 0.3rem;
 }
 
+.ux-text {
+  font-size: 20px;
+}
+
+.footerContainer {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.modal form {
+  width: 100%;
+  height: 80%;
+}
+
 .close {
   color: #aaaaaa;
   float: right;
@@ -768,17 +783,12 @@ header {
 }
 
 @media (width < 1025px) {
-  .ImagemHeader img:nth-child(1) {
-    max-width: 50%;
-  }
 
-  .ImagemHeader img:nth-child(2) {
-    max-width: 50%;
+  .ImagemHeader .logoTechnote {
+    height: 35vh;
   }
-
   .modal-content {
     width: 60%;
-    height: 80%;
   }
 
   .modal form {
@@ -786,19 +796,44 @@ header {
     height: 85%;
   }
 
+  .equipeGrid {
+    gap: 1rem;
+  }
+
+  .servicosImagens {
+    gap: 2rem;
+  }
+
+
 
 }
 
 @media (width < 800px) {
 
-  .logoResponsive {
-    display: block;
-  }
-
   .logo {
     display: none;
   }
+
+  .logoResponsive {
+    display: block;
+  }
   
+  .ImagemHeader .logoTechnote {
+    height: 32vh;
+    width: 25vw;
+  }
+
+  .ImagemHeader #logotipo {
+    max-width: 20vw;
+    height: 20vh;
+    left: 55%;
+  }
+
+  .ImagemHeader {
+    min-height: 65vh;
+    padding: 0;
+  }
+
   .navBar {
     display: none;
   }
@@ -806,12 +841,17 @@ header {
   .containerHeader {
     grid-template-columns: repeat(1, 1fr);
   }
-  .ImagemHeader {
-    min-height: 500px;
-  }
 
   .equipeGrid {
-    gap: 1rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .projetosContainer {
+    display: flex;
+    flex-direction: column-reverse;
   }
 
   .valoresGrid {
@@ -825,6 +865,11 @@ header {
 
   .projetosImagens {
     grid-template-columns: 35% 65%;
+    padding: 0 3rem;
+  }
+
+  .servicosContainer {
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .ux-text {
@@ -838,7 +883,6 @@ header {
 
   .modal-content {
     width: 80%;
-    height: 80%;
   }
 
   .modal form {
@@ -850,12 +894,29 @@ header {
 
 @media (width < 426px) {
 
+  .ImagemHeader .logoTechnote {
+    height: 31vh;
+    width: 45vw;
+    top: 10%;
+    left: 25%;
+  }
+
+  .ImagemHeader #logotipo {
+    transform: translate(-60%, 45%);
+    height: 22vh;
+    max-width: 50vw;
+  }
+
   .logoResponsive {
     display: block;
   }
 
   .logo {
     display: none;
+  }
+
+  .pitch {
+    gap: 1rem;
   }
 
   .equipeGrid {
@@ -877,43 +938,57 @@ header {
 
   .projetosImagens {
     grid-template-columns: 95%;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
   }
 
-  .atual {
-    width: 375px;
-    height: 330px;
-    display: grid;
-    padding: 0 0 0 1.375rem;
-    left: 5%;
-    top: 10%;
+  .projeto-principal {
+    padding: 1.75rem 1rem;
+  }
+
+  .logo-aqua {
+    width: 11rem;
   }
 
   .ux-text {
-    font-size: 20px;
-  }
-
-  .recente {
-    width: 100%;
-    height: auto;
-    padding: 0 0 0 1.75rem;
-    left: 5%;
-  }
-
-  .servicosContainer {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .footerContainer {
-    grid-template-columns: repeat(2, 1fr);
+    font-size: 15px;
   }
 
   .modal-content {
-    width: 95%;
-    height: 85%;
+    height: 80vh;
   }
 
+  
   .modal form {
     width: 100%;
-    height: 80%;
+    height: 75%;
+  }
+}
+
+
+@media (width < 376px) {
+  .ImagemHeader .logoTechnote {
+    height: 26vh;
+  }
+  .ImagemHeader #logotipo {
+    transform: translate(-60%, 15%);
+    height: 15vh;
+    max-width: 35vw;
+  }
+
+  .modal-content {
+    width: 90%;
+    height: 80vh;
+  }
+
+  
+  .modal form {
+    width: 100%;
+    height: 75%;
+  }
+
+  .rowModal {
+    height: 6.9rem;
   }
 }
