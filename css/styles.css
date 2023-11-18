@@ -7,7 +7,7 @@
   --secondary-color: #fafcff;
   --text-dark: #0d213f;
   --text-light: #767268;
-  --extra-light: #ffffff;
+  --extra-light: #fafcff;
   --max-width: 1200px;
   --Fonte: "Poppins", sans-serif;
   --FonteLogo: "Expletus Sans", sans-serif
@@ -23,6 +23,45 @@ html {
   scroll-behavior: smooth;
 }
 
+.navbar-links li.navbar-dropdown {
+  position: relative;
+}
+
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+}
+.navbar-links li a {
+  display: block;
+  text-decoration: none;
+  color: #444;
+  padding: 20px 20px;
+  font-weight: 700;
+  transition: 0.4s all;
+}
+
+.navbar-links li.navbar-dropdown .dropdown {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  padding: 20px 0;
+  top: 100%;
+  transform: translateY(50px);
+  left: 0;
+  width: 250px;
+  background-color: #fff;
+  box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  z-index: 111;
+  transition: 0.4s all;
+}
+
+.navbar-links li.navbar-dropdown:hover .dropdown {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0px);
+}
 
 .container {
   max-width: var(--max-width);
@@ -52,7 +91,7 @@ html {
   max-width: calc(var(--max-width) / 1.5);
 }
 
-.btn {
+.btn, #btnSend {
   padding: 0.75rem 2rem;
   outline: none;
   border: none;
@@ -64,7 +103,7 @@ html {
   transition: 0.3s;
 }
 
-.btn:hover {
+.btn:hover, #btnSend:hover {
   background-color: var(--primary-color-dark);
 }
 
@@ -84,7 +123,8 @@ body {
 
 nav {
   padding: 1rem;
-  position: absolute;
+  position: fixed;
+  border-radius: 0 0 10px 10px;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -93,9 +133,15 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 999;
+  background: #fafcff;
 }
 
-.logo {
+.logoResponsive {
+  display: none;
+}
+
+.logo, .logoResponsive {
   font-family: var(--FonteLogo);
   font-size: 1.2rem;
   font-weight: 600;
@@ -103,7 +149,7 @@ nav {
   cursor: pointer;
 }
 
-.logo span {
+.logo span, .logoResponsive span {
   color: var(--primary-color);
 }
 
@@ -125,7 +171,7 @@ nav {
 }
 
 header {
-  background-image: url(img/Hero-Landing-Page.png);
+  background-image: url(img/Hero-Landing-Page.webp);
   background-attachment: fixed;
   background-size: cover;
   -moz-background-size: cover;
@@ -143,25 +189,79 @@ header {
 
 .ImagemHeader {
   position: relative;
+  padding: 5rem 0;
 }
 
-.ImagemHeader img {
+.ImagemHeader .logoTechnote {
+  position: absolute;
+  top: 10%;
+  left: 25%;
+  border: 0.5rem solid var(--extra-light);
+  border-radius: 2rem;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  background: #fafcff;
+  padding: 1px;
+  max-width: 260px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  width: 20vw;
+  height: 45vh;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center center;
+  &:hover {
+    transform: scale(1.2, 1.2);
+  }
+  &:hover > .gear {
+    animation: GearRotate 15s;
+  }
+}
+
+@keyframes GearRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.logoTechnote img {
+  position: absolute;
+}
+
+.aqua {
+  width: 100%;
+  z-index: 34;
+}
+.gear {
+  width: 100%;
+  z-index: 31;
+}
+.faixa-frente {
+  width: 100%;
+  z-index: 32;
+}
+.faixa-back {
+  width: 100%;
+  z-index: 30;
+}
+
+
+
+
+.ImagemHeader #logotipo {
   position: absolute;
   top: 50%;
   left: 50%;
   border: 0.5rem solid var(--extra-light);
   border-radius: 2rem;
   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
-}
-
-.ImagemHeader img:nth-child(1) {
-  max-width: 350px;
-  transform: translate(-75%, -50%);
-}
-
-.ImagemHeader img:nth-child(2) {
-  max-width: 250px;
-  transform: translate(0%, -25%);
+  transform: translate(10%, -25%);
+  background: #fafcff;
+  padding: 1px;
+  max-width: 15vw;
+  z-index: 34;
 }
 
 .conteudoHeader {
@@ -209,9 +309,26 @@ header {
 
 .videoPitch img {
   width: 60px;
-  height: 60px;
   border-radius: 100%;
   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+.videoPitch img:hover {
+  animation: aquaRotate 4s;
+}
+
+@keyframes aquaRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.vPitch {
+  color: #000000;
+  font-weight: bolder;
 }
 
 .videoPitch span {
@@ -239,8 +356,8 @@ header {
 
 .equipeGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
 }
 
 .equipeCard {
@@ -252,13 +369,15 @@ header {
 
 .equipeCard img {
   border-radius: 1rem;
+  height: 20rem;
+  width: 100%;
 }
 
 .equipeDetalhes {
   position: absolute;
   width: calc(100% - 2rem);
   padding: 1rem;
-  bottom: -6rem;
+  bottom: -7rem;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -286,7 +405,7 @@ header {
 
 .valores {
   background-color: var(--secondary-color);
-  background-image: url(img/Quem-Somos.png);
+  background-image: url(img/Quem-Somos.webp);
   background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover;
@@ -311,6 +430,10 @@ header {
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  &:hover {
+    transform: scale(1.25rem);
+  }
 }
 
 .valoresDetalhes {
@@ -327,29 +450,115 @@ header {
 .projetosContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 5rem;
 }
 
 .projetosImagens {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 3.75rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .projeto {
   display: grid;
   place-content: center;
+  gap: 0.5rem;
+}
+
+.logo-aqua {
+  width: 15rem;
+  z-index: 34;
+}
+
+.c1 {
+  transform: rotate(140deg);
+  background: linear-gradient(to bottom, #0000FF, #00FF00);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+  font-size: 30px;
+}
+.c2 {
+  transform: scaleX(-1);
+  background: linear-gradient(to bottom, #00FF00, #0000FF);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+  font-size: 30px;
+}
+
+
+.projetosFuturos {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.imgReciclo {
+  width: 12rem;
+  height: 12rem;
+  transition: transform 0.3s ease-in-out 0s;
+  transform-origin: center center;
+  box-shadow: rgba(0, 0, 0, 0.1) 5px 5px 30px;
+  border: 0.5rem solid var(--extra-light);
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+}
+
+.projeto-futuro {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center center;
+  border: 0.5rem solid var(--extra-light);
+  border-radius: 2rem;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+.projeto-principal {
+  position: relative;
+  display: grid;
+  padding: 1.75rem 2rem ;
+  justify-items: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center center;
+  border: 0.5rem solid var(--extra-light);
+  border-radius: 2rem;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
   gap: 1rem;
 }
 
-.recente {
-  width: 350px;
-  height: 450px;
+.projeto-futuro img {
+  display: absolute;
 }
 
-.projeto img {
-  border-radius: 1rem;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+#Projeto-futuro-2 {
+  background-color: #49b2f5;
+  border: 0.5rem solid #49b2f5 ;
+  width: 12rem;
+  height: 12rem;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+}
+
+.projeto-futuro p {
+  width: 100%;
+  height: 100%;
 }
 
 .projetosConteudo {
@@ -357,7 +566,6 @@ header {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  align-items: end;
 }
 
 .projetosConteudo > div {
@@ -394,6 +602,38 @@ header {
   display: grid;
   place-content: center;
   gap: 1rem;
+}
+
+.sectionUx {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.ux-text {
+  position: absolute;
+  z-index: 1;
+  display: none;
+  font-weight: bolder;
+  font-size: 35px;
+  color: #0465e4;
+  display: none;
+  transition: filter 0.5s;
+  filter: blur(0);
+  text-align: center;
+}
+
+.sectionUx:hover .ux {
+  transition: filter 0.5s;
+  filter: blur(10px);
+}
+
+.sectionUx:hover .ux-text {
+  display: block;
+  filter: blur(0);
 }
 
 .footer {
@@ -449,17 +689,151 @@ header {
   border-top: 1px solid var(--text-light);
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal form {
+  width: 100%;
+  height: 90%;
+  font-weight: bold;
+}
+
+.modal-content {
+  background-color: var(--secondary-color);
+  margin: auto;
+  padding: 40px 20px 20px 20px;
+  border: 1px solid #888;
+  width: 50vw;
+  height: 75vh;
+  border-radius: 2rem;
+}
+
+.rowModal {
+  width: 100%;
+  height: 6.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.colModal {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.colModal-Single { 
+  width: 100%;
+}
+
+.colDireita input, .colDireita label {
+  margin-left: 1rem;
+}
+
+.colModal input {
+  width: 95%;
+  height: 2.35rem;
+  padding-left: 0.3rem;
+}
+
+.colModal-Single input {
+  width: 100%;
+}
+
+.colModal-Single textarea {
+  padding: 0.3rem 0 0.3rem 0.3rem;
+}
+
+.ux-text {
+  font-size: 20px;
+}
+
+.footerContainer {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.modal form {
+  width: 100%;
+  height: 80%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 @media (width < 1025px) {
-  .ImagemHeader img:nth-child(1) {
-    max-width: 50%;
+
+  .ImagemHeader .logoTechnote {
+    height: 35vh;
+  }
+  .modal-content {
+    width: 60%;
   }
 
-  .ImagemHeader img:nth-child(2) {
-    max-width: 50%;
+  .modal form {
+    width: 100%;
+    height: 85%;
   }
+
+  .equipeGrid {
+    gap: 1rem;
+  }
+
+  .servicosImagens {
+    gap: 2rem;
+  }
+
+
+
 }
 
 @media (width < 800px) {
+
+  .logo {
+    display: none;
+  }
+
+  .logoResponsive {
+    display: block;
+  }
+  
+  .ImagemHeader .logoTechnote {
+    height: 32vh;
+    width: 25vw;
+  }
+
+  .ImagemHeader #logotipo {
+    max-width: 20vw;
+    height: 20vh;
+    left: 55%;
+  }
+
+  .ImagemHeader {
+    min-height: 65vh;
+    padding: 0;
+  }
+
   .navBar {
     display: none;
   }
@@ -467,12 +841,17 @@ header {
   .containerHeader {
     grid-template-columns: repeat(1, 1fr);
   }
-  .ImagemHeader {
-    min-height: 500px;
-  }
 
   .equipeGrid {
-    gap: 1rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .projetosContainer {
+    display: flex;
+    flex-direction: column-reverse;
   }
 
   .valoresGrid {
@@ -480,21 +859,65 @@ header {
   }
 
   .projetosContainer {
+    grid-template-columns: repeat(1, 1fr);
     gap: 3rem;
   }
 
   .projetosImagens {
     grid-template-columns: 35% 65%;
+    padding: 0 3rem;
+  }
+
+  .servicosContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .ux-text {
+    font-size: 20px;
   }
 
   .recente {
-    width: 100%;
+    width: 80%;
     height: auto;
+  }
+
+  .modal-content {
+    width: 80%;
+  }
+
+  .modal form {
+    width: 100%;
+    height: 80%;
   }
 
 }
 
 @media (width < 426px) {
+
+  .ImagemHeader .logoTechnote {
+    height: 31vh;
+    width: 45vw;
+    top: 10%;
+    left: 25%;
+  }
+
+  .ImagemHeader #logotipo {
+    transform: translate(-60%, 45%);
+    height: 22vh;
+    max-width: 50vw;
+  }
+
+  .logoResponsive {
+    display: block;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .pitch {
+    gap: 1rem;
+  }
 
   .equipeGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -514,19 +937,58 @@ header {
   }
 
   .projetosImagens {
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 95%;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
   }
 
-  .recente {
+  .projeto-principal {
+    padding: 1.75rem 1rem;
+  }
+
+  .logo-aqua {
+    width: 11rem;
+  }
+
+  .ux-text {
+    font-size: 15px;
+  }
+
+  .modal-content {
+    height: 80vh;
+  }
+
+  
+  .modal form {
     width: 100%;
-    height: auto;
+    height: 75%;
+  }
+}
+
+
+@media (width < 376px) {
+  .ImagemHeader .logoTechnote {
+    height: 26vh;
+  }
+  .ImagemHeader #logotipo {
+    transform: translate(-60%, 15%);
+    height: 15vh;
+    max-width: 35vw;
   }
 
-  .servicosContainer {
-    grid-template-columns: repeat(1, 1fr);
+  .modal-content {
+    width: 90%;
+    height: 80vh;
   }
 
-  .footerContainer {
-    grid-template-columns: repeat(2, 1fr);
+  
+  .modal form {
+    width: 100%;
+    height: 75%;
+  }
+
+  .rowModal {
+    height: 6.9rem;
   }
 }
