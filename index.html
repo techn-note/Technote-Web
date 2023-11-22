@@ -13,7 +13,7 @@
     <meta property="og:type" content="LandPage" />
     <meta property="og:title" content="Technote" />
     <meta property="og:description" content="Technote - Tecnologia que conecta o futuro" />
-    <meta property="og:image" itemprop="image" content="https://eliharison.github.io/Technote/css/img/Logo.png" />
+    <meta property="og:image" itemprop="image" content="https://eliharison.github.io/Technote/css/img/Logo.webp" />
     <meta name="author" content="Equipe Technote">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -265,7 +265,7 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Fale com a nossa equipe de especialistas</h2>
-            <form action="contato.php" method="POST">
+            <form id="contatoForm" action="" method="POST">
                 <div class="rowModal">
                     <div class="colModal">
                         <label for="nome">Nome:</label>
@@ -299,7 +299,7 @@
                             </div>
                         </div>
                         <div class="rowModal">
-                            <input id="btnSend" type="submit" name="send" value="ENVIAR">
+                            <input id="btnSend" type="submit" name="send" value="ENVIAR" onclick="enviarEmail()">
                         </div>
                     </form>
                 </div>

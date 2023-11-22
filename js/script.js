@@ -25,3 +25,24 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+function enviarEmail() {
+    // Coleta os dados do formulário
+    var formData = new FormData(document.getElementById('contatoForm'));
+
+    // Envia os dados usando Fetch
+    fetch('contato.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        // Trata a resposta aqui se necessário
+        alert('E-mails enviados com sucesso!');
+    })
+    .catch(error => {
+        // Trata erros aqui se necessário
+        console.error('Erro:', error);
+    });
+    alert('E-mails enviados com sucesso!');
+}

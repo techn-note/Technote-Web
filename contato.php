@@ -51,18 +51,20 @@
         $name = $_POST["nome"];
         $lastName = $_POST["sobrenome"];
         $email = $_POST["email"];
+        $empresa = $_POST["empresa"];
+        $contato = $_POST["phone"];
         $info = $_POST["info"];
         
         //email pra mim mesmo
         $assuntoContatoRecebido = "Novo contato recebido";
-        $contato = "Uma nova mensagem de $name ($email) recebida: \n\n$info";
+        $contato = "Uma nova mensagem de: \nNome: $name $lastName \nEmail: $email \nContato: $contato \nEmpresa: $empresa \nMensagem: $info";
         sendEmail('detesteemail704@gmail.com', $assuntoContatoRecebido, $contato);
         
         //email resposta
         $respostaEmail = "Contato equipe Technote";
-        $respostaCorpo = "Olá $name, obrigado por entrar em contato. Sua mensagem foi recebida com sucesso e em breve entraremos em contato.";
+        $respostaCorpo = "Olá $name, obrigado por entrar em contato. Sua mensagem foi recebida com sucesso e em breve entraremos em contato. \n\nEquipe Technote.";
         sendEmail($email, $respostaEmail, $respostaCorpo);
     
-        echo 'E-mails enviados com sucesso!';
+        echo '<script>alert("E-mails enviados com sucesso!");</script>';
     }
 ?>
