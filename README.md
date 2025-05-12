@@ -15,7 +15,7 @@ O projeto tem como propósito criar um sitema Desktop em java para supervisionar
 # Serviços
 Nosso foco principal está no desenvolvimento mobile, web e UX/UI design. Nossa equipe é especializada em criar aplicativos e sites responsivos, intuitivos e visualmente atraentes. Se você precisa de um aplicativo para iOS ou Android, uma plataforma web personalizada ou uma interface de usuário bem projetada, estamos prontos para ajudar. Nós trabalhamos em estreita colaboração com você para entender suas necessidades e transformar suas ideias em realidade.
 
-Agradecemos por visitar nosso repositório no GitHub! Se você estiver interessado em conhecer mais, convido a acessar a nossa pagina https://eliharison.github.io/Technote.
+Agradecemos por visitar nosso repositório no GitHub! Se você estiver interessado em conhecer mais, convido a acessar a nossa pagina https://techn-note.github.io/Technote-Web/.
 Sinta-se à vontade para explorar nosso código e entrar em contato conosco!
 
 Equipe Technote
